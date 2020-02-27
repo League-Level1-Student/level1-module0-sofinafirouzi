@@ -10,11 +10,5 @@ public class HousesRunner {
 		Houses houseBuilder = new Houses();
 		houseBuilder.run();
 	}//main
-	
-
-
-
-
-	
 
 }//end class

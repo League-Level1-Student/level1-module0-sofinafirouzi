@@ -11,7 +11,28 @@ public class Houses {
 
 Robot rob = new Robot();
 Random random = new Random();
-Random color = new Random();
+
+
+void drawPointyRoof(int height) {
+	rob.setAngle(45);
+	rob.move(15);
+	rob.turn(90);
+	rob.move(15);
+	//down side house
+	rob.setAngle(180);
+	rob.move(height);
+	rob.setAngle(90);
+}//end pointy roof
+
+void drawFlatRoof(int height) {
+	rob.turn(90);
+	rob.move(30);
+	rob.turn(90);
+	//down side house
+	rob.move(height);
+	rob.turn(-90);
+}// end flat roof
+
 
 void run() {
 System.out.println("run" );
@@ -25,12 +46,15 @@ for(int i = 0; i<=10; i++) {
 int size = random.nextInt(3);
 if(size==0) {
 	house("small");
+	drawFlatRoof(60);
 }
 else if(size==1) {
 	house("medium");
+	drawFlatRoof(120);
 }
 else if(size==2) {
 	house("large");
+	drawPointyRoof(250);
 }
 
 int color = random.nextInt(3);
@@ -46,6 +70,8 @@ else if(color==2) {
 }//end for
 }//end run
 
+
+
 void house(int height) {
 	//grass
 	rob.setPenColor(Color.GREEN);
@@ -55,10 +81,9 @@ void house(int height) {
 	rob.turn(-90);
 	rob.move(height);
 	//roof
-	//need to make it so the large buldigns have flt roofs
+	
 	//house down
-	rob.move(height);
-	rob.turn(-90);
+	
 	
 }//end house integer
 
@@ -75,21 +100,6 @@ else if(size.contentEquals("large")) {
 	
 	
 }//end house string
-
-
-void drawPointyRoof() {
-	rob.turn(-45);
-	rob.move(15);
-	rob.turn(45);
-	rob.move(15);
-}//end pointy roof
-
-void drawFlatRoof() {
-	rob.turn(90);
-	rob.move(30);
-	rob.turn(90);
-}// end flat roof
-
 
 
 
