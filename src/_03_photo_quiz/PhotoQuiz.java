@@ -53,15 +53,25 @@ quizWindow.remove(photo);
 		// 10. find another image and create it (might take more than one line
 		// of code)
 String secondurl = "https://www.teacupspuppies.com/wp-content/uploads/2017/08/blue-french-bulldog-puppy-for-sale-184-b-teacup-puppies.jpg";
+Component pic;
+pic = createImage(secondurl);
 		// 11. add the second image to the quiz window
-
+quizWindow.add(pic);
 		// 12. pack the quiz window
-
+quizWindow.pack();
 		// 13. ask another question
-
+String question2 = JOptionPane.showInputDialog("What breed of puppy is this?");
 		// 14+ check answer, say if correct or incorrect, etc.
+if(question2.equalsIgnoreCase("French Bulldog")) {
+	JOptionPane.showMessageDialog(null, "you're correct!");
+}//end if
+else {
+	JOptionPane.showMessageDialog(null, "you're incorrect!");
+}//end else
 
-	}
+}//end run method
+
+	
 
 	private Component createImage(String imageUrl) throws MalformedURLException {
 		URL url = new URL(imageUrl);
@@ -74,4 +84,5 @@ String secondurl = "https://www.teacupspuppies.com/wp-content/uploads/2017/08/bl
 	// *14. add scoring to your quiz
 	// *15. make something happen when mouse enters image
 	// (imageComponent.addMouseMotionListener())
-}
+	
+}//end photo quiz
