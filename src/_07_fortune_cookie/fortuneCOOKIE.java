@@ -24,8 +24,6 @@ public class fortuneCOOKIE implements ActionListener{
 	}
 
 	
-public static void main(String[] args) {
-}//end main
 
 
 @Override
